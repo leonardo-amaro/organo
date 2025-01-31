@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import Botao from '../Botao';
 import CampoTexto from '../CampoTexto/CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
@@ -14,6 +15,10 @@ const Formulario = () => {
     'Mobile',
     'Inovação e Gestão'
   ];
+
+  // const [nome, setNome] = useState('');
+  // const [cargo, setCargo] = useState('');
+  // const [imagem, setImagem] = useState('');
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
