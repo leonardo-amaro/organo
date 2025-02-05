@@ -2,17 +2,17 @@ import './Rodape.css';
 
 const Rodape = () => {
   return (
-    <footer>
-      <div>
+    <footer className='rodape'>
+      <div className='item'>
         <img src='/imagens/fb.png' alt='Logo Facebook' />
         <img src='/imagens/tw.png' alt='Logo Twitter' />
         <img src='/imagens/ig.png' alt='Logo Instagram' />
       </div>
-      <div>
+      <div className='item'>
         <img src='/imagens/logo.png' alt='Logo da plataforma Organo' />
       </div>
-      <div>
-        <p>Criado por Alura</p>
+      <div className='item'>
+        <p>Criado por Alura.</p>
       </div>
     </footer>
   )
