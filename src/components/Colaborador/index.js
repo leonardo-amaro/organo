@@ -1,9 +1,9 @@
 import './Colaborador.css';
 
-const Colaborador = ({ nome, cargo }) => {
+const Colaborador = ({ nome, cargo, corDeFundo }) => {
   return (
     <div className='colaborador'>
-      <div className='cabecalho'>
+      <div className='cabecalho' style={{ backgroundColor: corDeFundo }}>
         <img src='https://github.com/leonardo-amaro.png' alt='Imagem do colaborador'/>
       </div>
       <div className='rodape'>
