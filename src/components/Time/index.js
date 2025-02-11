@@ -7,7 +7,9 @@ const Time = ({ time, colaboradores }) => {
         colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: time.corPrimaria }}>
             <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
             <div className='colaboradores'>
-                {colaboradores.map((colaborador, indice) => <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.corSecundaria} />)}
+                {colaboradores.map((colaborador, indice) => {
+                    return <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.corSecundaria} />
+                })}
             </div>
         </section>
 
