@@ -4,12 +4,14 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './formulario.css'
 
-const Formulario = ({aoCadastrar, times}) => {
+const Formulario = ({ aoCadastrar, times, criarNovoTime }) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('')
 
     const aoSubmeter = (evento) => {
         evento.preventDefault()
@@ -20,6 +22,12 @@ const Formulario = ({aoCadastrar, times}) => {
             imagem,
             time
         })
+    }
+
+    const aoCriarNovoTime = (evento) => {
+        evento.preventDefault();
+        console.log('novo time: ', nomeTime, corTime);
+        criarNovoTime({ nome: nomeTime, cor: corTime });
     }
 
     return (
@@ -49,6 +57,22 @@ const Formulario = ({aoCadastrar, times}) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Botao texto='Criar card' />
+            </form>
+            <form className="formulario" onSubmit={aoCriarNovoTime}>
+                <h2>Preencha os dados para criar um novo time.</h2>
+                <CampoTexto
+                    obrigatorio
+                    label='Nome'
+                    placeholder='Digite o nome do time '
+                    valor={nomeTime}
+                    aoAlterado={valor => setNomeTime(valor)}/>
+                <CampoTexto
+                    obrigatorio
+                    label='Cor' 
+                    placeholder='Digite a cor do time '
+                    valor={corTime}
+                    aoAlterado={valor => setCorTime(valor)}/>
+                <Botao texto='Criar novo time' />
             </form>
         </section>
     )
