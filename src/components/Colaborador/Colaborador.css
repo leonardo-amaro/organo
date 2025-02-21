@@ -37,6 +37,11 @@
     padding: 0 16px;
 }
 
+.colaborador .rodape .favoritar {
+    margin-top: 16px;
+    cursor: pointer;
+}
+
 .deletar {
     position: absolute;
     top: -10px;

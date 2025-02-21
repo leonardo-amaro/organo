@@ -1,7 +1,16 @@
-import { IoIosCloseCircle } from "react-icons/io";
+import { IoIosCloseCircle, IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import './colaborador.css'
 
-const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
+const Colaborador = ({ colaborador, corDeFundo, aoDeletar, verificarFavorito }) => {
+    function favoritar() {
+        verificarFavorito(colaborador.id);
+    }
+
+    const propsFavorito = {
+        size: 25,
+        onClick: favoritar
+    }
+
     return (
         <div className="colaborador">
             <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
@@ -15,6 +24,13 @@ const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
             <div className="rodape">
                 <h4>{colaborador.nome}</h4>
                 <h5>{colaborador.cargo}</h5>
+                <div className="favoritar">
+                {
+                    colaborador.favorito 
+                    ? <IoIosHeart { ...propsFavorito } color="#ff0000" /> 
+                    : <IoIosHeartEmpty { ...propsFavorito } />
+                }
+            </div>
             </div>
         </div>
     );
