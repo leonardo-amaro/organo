@@ -4,6 +4,7 @@ import Formulario from "./components/Formulario";
 import Rodape from "./components/Rodape";
 import Time from "./components/Time";
 import { v4 as uuidv4 } from "uuid";
+// import { MdAssignmentAdd } from "react-icons/md";
 
 function App() {
 
