@@ -1,21 +1,36 @@
-import './Rodape.css';
+
+import './rodape.css'
 
 const Rodape = () => {
-  return (
-    <footer className='footer'>
-      <div className='item'>
-        <img src='/imagens/fb.png' alt='Logo Facebook' />
-        <img src='/imagens/tw.png' alt='Logo Twitter' />
-        <img src='/imagens/ig.png' alt='Logo Instagram' />
-      </div>
-      <div className='item'>
-        <img src='/imagens/logo.png' alt='Logo da plataforma Organo' />
-      </div>
-      <div className='item'>
-        <p>Criado por Alura.</p>
-      </div>
-    </footer>
-  )
+    return (<footer className="footer">
+       <section>
+       <ul>
+            <li>
+                <a href="facebook.com" target="_blank">
+                    <img src="/imagens/facebook.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="twitter.com" target="_blank">
+                    <img src="/imagens/twitter.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="instagram.com" target="_blank">
+                    <img src="/imagens/instagram.png" alt="" />
+                </a>
+            </li>
+        </ul>
+       </section>
+       <section>
+       <img src="/imagens/logo.png" alt="" />
+       </section>
+       <section>
+        <p>
+            Desenvolvido por Alura.
+        </p>
+       </section>
+    </footer>)
 }
 
-export default Rodape;
+export default Rodape

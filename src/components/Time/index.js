@@ -1,23 +1,29 @@
-import Colaborador from '../Colaborador';
-import './Time.css';
+import hexToRgba from 'hex-to-rgba'
+import Colaborador from '../Colaborador'
+import './time.css'
 
-const Time = (props) => {
-  return (
-    // Renderização condicional (se não houver colaborador na lista, o componente não é renderizado)
-    props.colaboradores.length > 0 && <section className='time' style={{ backgroundColor: props.corSecundaria }}>
-      <h3 style={{ borderColor: props.corPrimaria }}>
-        {props.nome}
-      </h3>
-      <div className='colaboradores'>
-        {props.colaboradores.map((colaborador) => <Colaborador
-          key={colaborador.nome}
-          nome={colaborador.nome}
-          cargo={colaborador.cargo}
-          corDeFundo={props.corPrimaria}
-        />)}
-      </div>
-    </section>
-  );
+const Time = ({ time, colaboradores, deletarColaborador, mudaCor, verificarFavorito }) => {
+    return (
+        colaboradores.length > 0 
+        && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(time.cor, 0.3)}}>
+            <input type='color' className='muda-cor' value={time.cor} onChange={(evento) => mudaCor(evento.target.value, time.id)} />
+            <h3 style={{ borderColor: time.cor }}>{time.nome}</h3>
+            <div className='colaboradores'>
+                {colaboradores.map((colaborador, indice) => {
+                    return (
+                        <Colaborador 
+                            key={indice} 
+                            colaborador={colaborador} 
+                            corDeFundo={time.cor} 
+                            aoDeletar={deletarColaborador} 
+                            verificarFavorito={verificarFavorito}
+                        />
+                    )
+                })}
+            </div>
+        </section>
+
+    )
 }
 
-export default Time;
+export default Time
