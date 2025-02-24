@@ -4,7 +4,7 @@ import Formulario from "./components/Formulario";
 import Rodape from "./components/Rodape";
 import Time from "./components/Time";
 import { v4 as uuidv4 } from "uuid";
-// import { MdAssignmentAdd } from "react-icons/md";
+import { MdAssignmentAdd } from "react-icons/md";
 
 function App() {
 
@@ -277,6 +277,9 @@ function App() {
         aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
         criarNovoTime={criaTime}
       />
+      <section className="controle-formulario">
+        <MdAssignmentAdd size={50} color="#6278F7" />
+      </section>
       <section className="times">
         <h1>Minha organização</h1>
         {times.map((time, indice) => 

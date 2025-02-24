@@ -22,3 +22,12 @@ h1 {
 h1, h2 {
   font-family: 'Prata', serif;
 }
+
+.controle-formulario {
+  text-align: center;
+  cursor: pointer;
+}
+
+.controle-formulario:hover {
+  opacity: 0.8;
+}
