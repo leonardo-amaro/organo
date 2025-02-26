@@ -4,7 +4,7 @@ import Campo from '../Campo'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
-const Formulario = ({ aoCadastrar, times, criarNovoTime }) => {
+const Formulario = ({ aoCadastrar, times, criarNovoTime, visivel }) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -31,6 +31,7 @@ const Formulario = ({ aoCadastrar, times, criarNovoTime }) => {
     }
 
     return (
+        visivel &&
         <section className="formulario-container">
             <form className="formulario" onSubmit={aoSubmeter}>
                 <h2>Preencha os dados para criar o card do colaborador.</h2>

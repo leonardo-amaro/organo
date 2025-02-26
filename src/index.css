@@ -24,6 +24,7 @@ h1, h2 {
 }
 
 .controle-formulario {
+  margin-top: 24px;
   text-align: center;
   cursor: pointer;
 }

@@ -241,7 +241,8 @@ function App() {
     },
   ]
 
-  const [colaboradores, setColaboradores] = useState(inicial)
+  const [colaboradores, setColaboradores] = useState(inicial);
+  const [visivel, setVisivel] = useState(false);
 
   function deletarColaborador(id) {
     setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
@@ -276,9 +277,14 @@ function App() {
         times={times.map(time => time.nome)} 
         aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
         criarNovoTime={criaTime}
+        visivel={visivel}
       />
       <section className="controle-formulario">
-        <MdAssignmentAdd size={50} color="#6278F7" />
+        <MdAssignmentAdd 
+          size={50} 
+          color="#6278F7" 
+          onClick={() => setVisivel(!visivel)}
+        />
       </section>
       <section className="times">
         <h1>Minha organização</h1>
