@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
 import Rodape from "./components/Rodape";
@@ -241,8 +241,15 @@ function App() {
     },
   ]
 
-  const [colaboradores, setColaboradores] = useState(inicial);
+  const [colaboradores, setColaboradores] = useState([]);
+
   const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/colaboradores')
+      .then((resposta) => resposta.json())
+      .then((dados) => setColaboradores(dados));
+  }, []);
 
   function deletarColaborador(id) {
     setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
