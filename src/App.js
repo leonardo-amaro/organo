@@ -248,8 +248,17 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:8080/colaboradores')
       .then((resposta) => resposta.json())
-      .then((dados) => setColaboradores(dados));
+      .then((dados) => formatarColaboradores(dados));
   }, []);
+
+  function formatarColaboradores(arrColaboradores) {
+    setColaboradores(
+      arrColaboradores.map((colaborador) => {
+        let colaboradorFormatado = { ...colaborador, id: uuidv4() }
+        return colaboradorFormatado;
+      })
+    );
+  }
 
   function deletarColaborador(id) {
     setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
