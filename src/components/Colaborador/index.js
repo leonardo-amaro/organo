@@ -1,3 +1,4 @@
+import React from 'react'
 import { IoIosCloseCircle, IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import './Colaborador.css'
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import './lista-suspensa.css'
 
 const ListaSuspensa = ({label, items,  valor, aoAlterado, obrigatorio = false}) => {

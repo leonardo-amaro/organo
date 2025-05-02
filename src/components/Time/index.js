@@ -1,3 +1,4 @@
+import React from 'react'
 import hexToRgba from 'hex-to-rgba'
 import Colaborador from '../Colaborador'
 import './Time.css'
